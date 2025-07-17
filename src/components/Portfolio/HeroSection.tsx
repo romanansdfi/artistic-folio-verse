@@ -29,13 +29,18 @@ const HeroSection = () => {
           {/* Main Heading */}
           <div className="space-y-4">
             <h1 className="text-6xl md:text-8xl font-bold leading-tight">
-              <span className="gradient-text">Creative</span>
+              <span className="text-foreground">Rambilas</span>
               <br />
-              <span className="text-foreground">Developer</span>
+              <span className="gradient-text">Sah</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Crafting digital experiences with modern web technologies and creative design solutions
-            </p>
+            <div className="space-y-2">
+              <p className="text-2xl md:text-3xl font-semibold text-primary">
+                Full Stack Developer
+              </p>
+              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                Crafting digital experiences with modern web technologies and creative design solutions
+              </p>
+            </div>
           </div>
 
           {/* CTA Buttons */}
