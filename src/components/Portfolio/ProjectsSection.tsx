@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ProjectsSection = () => {
   const projects = [
@@ -10,8 +11,8 @@ const ProjectsSection = () => {
       description: "A full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, and admin dashboard.",
       technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "Docker"],
       image: "/placeholder-project-1.jpg",
-      github: "#",
-      demo: "#",
+      github: "https://github.com/rambilas/ecommerce-platform",
+      demo: "https://ecommerce-demo.rambilas.dev",
       featured: true
     },
     {
@@ -19,8 +20,8 @@ const ProjectsSection = () => {
       description: "Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
       technologies: ["Vue.js", "Firebase", "Tailwind CSS", "Socket.io"],
       image: "/placeholder-project-2.jpg",
-      github: "#",
-      demo: "#",
+      github: "https://github.com/rambilas/task-manager",
+      demo: "https://tasks.rambilas.dev",
       featured: true
     },
     {
@@ -28,8 +29,8 @@ const ProjectsSection = () => {
       description: "A responsive portfolio website built with modern web technologies featuring 3D animations and smooth interactions.",
       technologies: ["React", "Three.js", "Tailwind CSS", "Framer Motion"],
       image: "/placeholder-project-3.jpg",
-      github: "#",
-      demo: "#",
+      github: "https://github.com/rambilas/portfolio",
+      demo: "https://rambilas.dev",
       featured: false
     },
     {
@@ -37,8 +38,8 @@ const ProjectsSection = () => {
       description: "Real-time weather dashboard with interactive maps, forecasts, and data visualization using modern APIs.",
       technologies: ["TypeScript", "D3.js", "OpenWeather API", "Mapbox"],
       image: "/placeholder-project-4.jpg",
-      github: "#",
-      demo: "#",
+      github: "https://github.com/rambilas/weather-dashboard",
+      demo: "https://weather.rambilas.dev",
       featured: false
     }
   ];
@@ -109,12 +110,21 @@ const ProjectsSection = () => {
 
                 {/* Project Links */}
                 <div className="flex gap-4">
-                  <Button size="sm" className="group">
-                    <ExternalLink className="w-4 h-4 mr-2" />
+                  <Button 
+                    size="sm" 
+                    className="group"
+                    onClick={() => window.open(project.demo, '_blank')}
+                  >
+                    <ExternalLink className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
                     Live Demo
                   </Button>
-                  <Button variant="secondary" size="sm" className="glass-card">
-                    <Github className="w-4 h-4 mr-2" />
+                  <Button 
+                    variant="secondary" 
+                    size="sm" 
+                    className="glass-card group"
+                    onClick={() => window.open(project.github, '_blank')}
+                  >
+                    <Github className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
                     Code
                   </Button>
                 </div>
@@ -171,10 +181,20 @@ const ProjectsSection = () => {
 
                   {/* Project Links */}
                   <div className="flex gap-3">
-                    <Button size="sm" variant="ghost" className="p-2">
+                    <Button 
+                      size="sm" 
+                      variant="ghost" 
+                      className="p-2 hover:scale-110 transition-transform"
+                      onClick={() => window.open(project.demo, '_blank')}
+                    >
                       <ExternalLink className="w-4 h-4" />
                     </Button>
-                    <Button size="sm" variant="ghost" className="p-2">
+                    <Button 
+                      size="sm" 
+                      variant="ghost" 
+                      className="p-2 hover:scale-110 transition-transform"
+                      onClick={() => window.open(project.github, '_blank')}
+                    >
                       <Github className="w-4 h-4" />
                     </Button>
                   </div>
@@ -186,10 +206,12 @@ const ProjectsSection = () => {
 
         {/* View All Projects CTA */}
         <div className="text-center mt-16">
-          <Button variant="secondary" className="glass-card group">
-            View All Projects
-            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-          </Button>
+          <Link to="/projects">
+            <Button variant="secondary" className="glass-card group hover:scale-105 transition-all duration-300">
+              View All Projects
+              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
