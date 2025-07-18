@@ -28,18 +28,8 @@ const Navigation = () => {
       isScrolled ? 'glass-card backdrop-blur-lg' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo with enhanced styling */}
-          <a href="#" className="relative group">
-            <div className="text-2xl font-bold gradient-text hover-lift transition-all duration-300">
-              <span className="relative">
-                Rambilas Sah
-                <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300" />
-              </span>
-            </div>
-          </a>
-
-          {/* Desktop Navigation with enhanced hover effects */}
+        <div className="flex justify-center items-center h-20 relative">
+          {/* Centered Desktop Navigation with enhanced hover effects */}
           <div className="hidden md:flex items-center space-x-2">
             {navItems.map((item, index) => (
               <a
@@ -64,7 +54,7 @@ const Navigation = () => {
           </div>
 
           {/* Mobile Menu Button with enhanced styling */}
-          <div className="md:hidden">
+          <div className="md:hidden absolute right-0">
             <Button
               variant="ghost"
               size="sm"

@@ -55,13 +55,13 @@ const HeroSection = () => {
 
           {/* Social Links */}
           <div className="flex gap-6 justify-center pt-8">
-            <a href="#" className="p-3 glass-card rounded-full hover-lift transition-all duration-300 hover:bg-primary/20">
+            <a href="https://github.com/Ram-sah19" target="_blank" rel="noopener noreferrer" className="p-3 glass-card rounded-full hover-lift transition-all duration-300 hover:bg-primary/20">
               <Github className="w-6 h-6" />
             </a>
-            <a href="#" className="p-3 glass-card rounded-full hover-lift transition-all duration-300 hover:bg-primary/20">
+            <a href="https://www.linkedin.com/in/rambilas-sah-3610192a4/" target="_blank" rel="noopener noreferrer" className="p-3 glass-card rounded-full hover-lift transition-all duration-300 hover:bg-primary/20">
               <Linkedin className="w-6 h-6" />
             </a>
-            <a href="#" className="p-3 glass-card rounded-full hover-lift transition-all duration-300 hover:bg-primary/20">
+            <a href="#contact" className="p-3 glass-card rounded-full hover-lift transition-all duration-300 hover:bg-primary/20">
               <Mail className="w-6 h-6" />
             </a>
           </div>

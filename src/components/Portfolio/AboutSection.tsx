@@ -87,12 +87,14 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* Profile Image Placeholder */}
+          {/* Profile Image */}
           <div className="relative">
-            <div className="aspect-square rounded-2xl glass-card p-8 flex items-center justify-center">
-              <div className="w-full h-full rounded-xl bg-gradient-primary opacity-20 flex items-center justify-center">
-                <Users className="w-24 h-24 text-primary" />
-              </div>
+            <div className="aspect-square rounded-2xl glass-card p-4 overflow-hidden">
+              <img 
+                src="/lovable-uploads/12cde534-0487-4fa2-be99-e42df599ba1a.png" 
+                alt="Rambilas Sah" 
+                className="w-full h-full object-cover rounded-xl hover-lift transition-transform duration-300"
+              />
             </div>
           </div>
         </div>
