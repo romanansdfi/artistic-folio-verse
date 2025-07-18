@@ -3,43 +3,57 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import spotifyImage from "@/assets/spotify-clone.jpg";
+import bloodDonationImage from "@/assets/blood-donation-ai.jpg";
+import aiDetectionImage from "@/assets/ai-detection.jpg";
+import schoolManagementImage from "@/assets/school-management.jpg";
+import touristAiImage from "@/assets/tourist-ai.jpg";
 
 const ProjectsSection = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, and admin dashboard.",
-      technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "Docker"],
-      image: "/placeholder-project-1.jpg",
-      github: "https://github.com/rambilas/ecommerce-platform",
-      demo: "https://ecommerce-demo.rambilas.dev",
+      title: "Spotify Clone",
+      description: "A full-featured music streaming application with playlist management, music player controls, search functionality, and modern dark UI design similar to Spotify.",
+      technologies: ["React", "Node.js", "Express", "MongoDB", "Web Audio API", "Tailwind CSS"],
+      image: spotifyImage,
+      github: "https://github.com/Ram-sah19/spotify-clone",
+      demo: "https://spotify-clone-ram.vercel.app",
       featured: true
     },
     {
-      title: "Task Management App",
-      description: "Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      technologies: ["Vue.js", "Firebase", "Tailwind CSS", "Socket.io"],
-      image: "/placeholder-project-2.jpg",
-      github: "https://github.com/rambilas/task-manager",
-      demo: "https://tasks.rambilas.dev",
+      title: "Blood Donation AI System",
+      description: "An Intelligent Health-Aware Platform for Optimized Blood Donation and Emergency Resource Matching with AI-powered donor-recipient matching and real-time inventory management.",
+      technologies: ["Python", "TensorFlow", "React", "FastAPI", "PostgreSQL", "Machine Learning"],
+      image: bloodDonationImage,
+      github: "https://github.com/Ram-sah19/blood-donation-ai",
+      demo: "https://blood-donation-ai.vercel.app",
       featured: true
     },
     {
-      title: "Portfolio Website",
-      description: "A responsive portfolio website built with modern web technologies featuring 3D animations and smooth interactions.",
-      technologies: ["React", "Three.js", "Tailwind CSS", "Framer Motion"],
-      image: "/placeholder-project-3.jpg",
-      github: "https://github.com/rambilas/portfolio",
-      demo: "https://rambilas.dev",
+      title: "AI-Powered Object Detection and Tracking System",
+      description: "Real-time object detection using YOLOv5/CNN for smart surveillance, safety automation, and visual analytics with advanced computer vision capabilities.",
+      technologies: ["Python", "YOLOv5", "OpenCV", "TensorFlow", "Flask", "WebSocket"],
+      image: aiDetectionImage,
+      github: "https://github.com/Ram-sah19/ai-object-detection",
+      demo: "https://ai-detection-ram.vercel.app",
+      featured: true
+    },
+    {
+      title: "Pioneer – Smart School Management Web Platform",
+      description: "Comprehensive school management system with student enrollment, grade tracking, attendance management, and parent-teacher communication portal.",
+      technologies: ["React", "Node.js", "MongoDB", "Express", "Socket.io", "Chart.js"],
+      image: schoolManagementImage,
+      github: "https://github.com/Ram-sah19/pioneer-school-management",
+      demo: "https://pioneer-school.vercel.app",
       featured: false
     },
     {
-      title: "Weather Dashboard",
-      description: "Real-time weather dashboard with interactive maps, forecasts, and data visualization using modern APIs.",
-      technologies: ["TypeScript", "D3.js", "OpenWeather API", "Mapbox"],
-      image: "/placeholder-project-4.jpg",
-      github: "https://github.com/rambilas/weather-dashboard",
-      demo: "https://weather.rambilas.dev",
+      title: "🌍 Tourist AI – Smart Travel Guide for Tamil Nadu",
+      description: "AI-powered travel companion for Tamil Nadu with personalized itinerary planning, cultural site recommendations, and local guide integration.",
+      technologies: ["React Native", "Python", "Google Maps API", "TensorFlow", "Firebase"],
+      image: touristAiImage,
+      github: "https://github.com/Ram-sah19/tourist-ai-tamil-nadu",
+      demo: "https://tourist-ai-tn.vercel.app",
       featured: false
     }
   ];
@@ -78,8 +92,12 @@ const ProjectsSection = () => {
             >
               {/* Project Image */}
               <div className="lg:w-1/2 relative overflow-hidden">
-                <div className="aspect-video lg:aspect-square bg-gradient-primary/20 flex items-center justify-center">
-                  <div className="text-6xl text-primary/40">🚀</div>
+                <div className="aspect-video lg:aspect-square overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent lg:bg-gradient-to-r lg:from-background/80 lg:to-transparent" />
               </div>
@@ -112,19 +130,19 @@ const ProjectsSection = () => {
                 <div className="flex gap-4">
                   <Button 
                     size="sm" 
-                    className="group"
+                    className="group hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary/25"
                     onClick={() => window.open(project.demo, '_blank')}
                   >
-                    <ExternalLink className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
+                    <ExternalLink className="w-4 h-4 mr-2 group-hover:scale-110 group-hover:rotate-12 transition-transform" />
                     Live Demo
                   </Button>
                   <Button 
                     variant="secondary" 
                     size="sm" 
-                    className="glass-card group"
+                    className="glass-card group hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-secondary/25"
                     onClick={() => window.open(project.github, '_blank')}
                   >
-                    <Github className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
+                    <Github className="w-4 h-4 mr-2 group-hover:scale-110 group-hover:rotate-12 transition-transform" />
                     Code
                   </Button>
                 </div>
@@ -148,8 +166,12 @@ const ProjectsSection = () => {
                 className="glass-card overflow-hidden hover-lift group"
               >
                 {/* Project Image */}
-                <div className="aspect-video bg-gradient-primary/20 flex items-center justify-center">
-                  <div className="text-4xl text-primary/40">💼</div>
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
                 </div>
 
                 {/* Project Info */}
@@ -184,7 +206,7 @@ const ProjectsSection = () => {
                     <Button 
                       size="sm" 
                       variant="ghost" 
-                      className="p-2 hover:scale-110 transition-transform"
+                      className="p-2 hover:scale-110 hover:rotate-12 transition-all duration-300 hover:bg-primary/10 hover:shadow-md"
                       onClick={() => window.open(project.demo, '_blank')}
                     >
                       <ExternalLink className="w-4 h-4" />
@@ -192,7 +214,7 @@ const ProjectsSection = () => {
                     <Button 
                       size="sm" 
                       variant="ghost" 
-                      className="p-2 hover:scale-110 transition-transform"
+                      className="p-2 hover:scale-110 hover:rotate-12 transition-all duration-300 hover:bg-secondary/10 hover:shadow-md"
                       onClick={() => window.open(project.github, '_blank')}
                     >
                       <Github className="w-4 h-4" />
@@ -207,9 +229,9 @@ const ProjectsSection = () => {
         {/* View All Projects CTA */}
         <div className="text-center mt-16">
           <Link to="/projects">
-            <Button variant="secondary" className="glass-card group hover:scale-105 transition-all duration-300">
+            <Button variant="secondary" className="glass-card group hover:scale-105 hover:shadow-xl hover:shadow-secondary/25 transition-all duration-300">
               View All Projects
-              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 group-hover:scale-110 transition-transform" />
             </Button>
           </Link>
         </div>

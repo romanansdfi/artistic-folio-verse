@@ -88,14 +88,16 @@ const AboutSection = () => {
           </div>
 
           {/* Profile Image */}
-          <div className="relative">
-            <div className="aspect-square rounded-2xl glass-card p-4 overflow-hidden">
+          <div className="relative group">
+            <div className="aspect-square rounded-2xl glass-card p-4 overflow-hidden hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500">
               <img 
                 src="/lovable-uploads/12cde534-0487-4fa2-be99-e42df599ba1a.png" 
                 alt="Rambilas Sah" 
-                className="w-full h-full object-cover rounded-xl hover-lift transition-transform duration-300"
+                className="w-full h-full object-cover rounded-xl group-hover:scale-110 group-hover:rotate-2 transition-all duration-500 hover:brightness-110"
               />
             </div>
+            {/* Floating glow effect */}
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl" />
           </div>
         </div>
 
