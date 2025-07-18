@@ -1,38 +1,26 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Code, Palette, Rocket, Users } from "lucide-react";
-
 const AboutSection = () => {
-  const skills = [
-    "React", "TypeScript", "Node.js", "Python", "PostgreSQL", 
-    "AWS", "Docker", "GraphQL", "Tailwind CSS", "Three.js"
-  ];
-
-  const services = [
-    {
-      icon: Code,
-      title: "Full-Stack Development",
-      description: "Building scalable web applications with modern technologies and best practices."
-    },
-    {
-      icon: Palette,
-      title: "UI/UX Design",
-      description: "Creating intuitive and beautiful user interfaces that enhance user experience."
-    },
-    {
-      icon: Rocket,
-      title: "Performance Optimization",
-      description: "Optimizing applications for speed, accessibility, and search engine visibility."
-    },
-    {
-      icon: Users,
-      title: "Team Collaboration",
-      description: "Working effectively with cross-functional teams to deliver exceptional results."
-    }
-  ];
-
-  return (
-    <section id="about" className="py-24 relative overflow-hidden">
+  const skills = ["React", "TypeScript", "Node.js", "Python", "PostgreSQL", "AWS", "Docker", "GraphQL", "Tailwind CSS", "Three.js"];
+  const services = [{
+    icon: Code,
+    title: "Full-Stack Development",
+    description: "Building scalable web applications with modern technologies and best practices."
+  }, {
+    icon: Palette,
+    title: "UI/UX Design",
+    description: "Creating intuitive and beautiful user interfaces that enhance user experience."
+  }, {
+    icon: Rocket,
+    title: "Performance Optimization",
+    description: "Optimizing applications for speed, accessibility, and search engine visibility."
+  }, {
+    icon: Users,
+    title: "Team Collaboration",
+    description: "Working effectively with cross-functional teams to deliver exceptional results."
+  }];
+  return <section id="about" className="py-24 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="bg-shape w-64 h-64 top-20 -right-32 opacity-5" />
@@ -57,12 +45,7 @@ const AboutSection = () => {
           {/* Bio */}
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold">My Journey</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              With over 5 years of experience in web development, I've had the privilege 
-              of working with startups and established companies alike. My journey started 
-              with a curiosity about how websites work, and it has evolved into a passion 
-              for creating digital experiences that truly matter.
-            </p>
+            <p className="text-muted-foreground leading-relaxed">With a strong foundation in web development and a deep interest in AI, I’ve been actively building innovative digital solutions that combine user-centric design with cutting-edge technology. My journey began with a curiosity about how websites and intelligent systems work, and it has grown into a passion for developing impactful web applications—whether it's smart travel guides, AI chat assistants, or real-time emergency management platforms.</p>
             <p className="text-muted-foreground leading-relaxed">
               I believe in the power of technology to solve real-world problems and 
               improve people's lives. When I'm not coding, you can find me exploring 
@@ -74,15 +57,9 @@ const AboutSection = () => {
             <div className="space-y-4">
               <h4 className="text-lg font-medium">Technical Skills</h4>
               <div className="flex flex-wrap gap-2">
-                {skills.map((skill) => (
-                  <Badge 
-                    key={skill} 
-                    variant="secondary" 
-                    className="glass-card hover-lift cursor-default"
-                  >
+                {skills.map(skill => <Badge key={skill} variant="secondary" className="glass-card hover-lift cursor-default">
                     {skill}
-                  </Badge>
-                ))}
+                  </Badge>)}
               </div>
             </div>
           </div>
@@ -90,11 +67,7 @@ const AboutSection = () => {
           {/* Profile Image */}
           <div className="relative group">
             <div className="aspect-square rounded-2xl glass-card p-4 overflow-hidden hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500">
-              <img 
-                src="/lovable-uploads/12cde534-0487-4fa2-be99-e42df599ba1a.png" 
-                alt="Rambilas Sah" 
-                className="w-full h-full object-cover rounded-xl group-hover:scale-110 group-hover:rotate-2 transition-all duration-500 hover:brightness-110"
-              />
+              <img src="/lovable-uploads/12cde534-0487-4fa2-be99-e42df599ba1a.png" alt="Rambilas Sah" className="w-full h-full object-cover rounded-xl group-hover:scale-110 group-hover:rotate-2 transition-all duration-500 hover:brightness-110" />
             </div>
             {/* Floating glow effect */}
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl" />
@@ -114,11 +87,7 @@ const AboutSection = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, index) => (
-              <Card 
-                key={index}
-                className="glass-card p-6 hover-lift group cursor-default"
-              >
+            {services.map((service, index) => <Card key={index} className="glass-card p-6 hover-lift group cursor-default">
                 <div className="space-y-4">
                   <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
                     <service.icon className="w-6 h-6 text-primary" />
@@ -128,13 +97,10 @@ const AboutSection = () => {
                     {service.description}
                   </p>
                 </div>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
