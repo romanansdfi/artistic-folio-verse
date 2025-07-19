@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -13,6 +14,10 @@ const Navigation = () => {
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" }
   ];
+
+  const openEmail = () => {
+    window.location.href = 'mailto:ram6070246@gmail.com';
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,7 +40,7 @@ const Navigation = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="relative px-4 py-2 text-foreground font-medium group transition-all duration-300"
+                className="relative px-4 py-2 text-foreground font-medium group transition-all duration-300 enhanced-nav-link"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <span className="relative z-10 group-hover:text-primary transition-colors duration-300">
@@ -47,7 +52,11 @@ const Navigation = () => {
                 <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-primary group-hover:w-full group-hover:left-0 transition-all duration-300" />
               </a>
             ))}
-            <Button size="sm" className="ml-4 glow-primary hover-lift relative overflow-hidden group">
+            <Button 
+              size="sm" 
+              className="ml-4 glow-primary hover-lift relative overflow-hidden group enhanced-button"
+              onClick={openEmail}
+            >
               <span className="relative z-10">Hire Me</span>
               <div className="absolute inset-0 bg-gradient-to-r from-primary-glow to-accent translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300" />
             </Button>
@@ -59,7 +68,7 @@ const Navigation = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 glass-card hover:bg-primary/20 transition-all duration-300"
+              className="p-2 glass-card hover:bg-primary/20 transition-all duration-300 enhanced-button"
             >
               <div className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
                 {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -76,7 +85,7 @@ const Navigation = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block text-foreground hover:text-primary transition-all duration-300 font-medium py-2 px-3 rounded-lg hover:bg-primary/10 group"
+                  className="block text-foreground hover:text-primary transition-all duration-300 font-medium py-2 px-3 rounded-lg hover:bg-primary/10 group enhanced-nav-link"
                   onClick={() => setIsOpen(false)}
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
@@ -85,7 +94,14 @@ const Navigation = () => {
                   </span>
                 </a>
               ))}
-              <Button size="sm" className="w-full glow-primary hover-lift mt-4">
+              <Button 
+                size="sm" 
+                className="w-full glow-primary hover-lift mt-4 enhanced-button"
+                onClick={() => {
+                  openEmail();
+                  setIsOpen(false);
+                }}
+              >
                 <span className="relative z-10">Hire Me</span>
               </Button>
             </div>

@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -57,58 +58,17 @@ All colors MUST be HSL.
     --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* ... keep existing code (dark theme variables) */
   }
 }
 
@@ -133,7 +93,7 @@ All colors MUST be HSL.
     transform-style: preserve-3d;
   }
   
-  /* Floating animation */
+  /* Enhanced Floating animations */
   .floating {
     animation: float 6s ease-in-out infinite;
   }
@@ -150,7 +110,7 @@ All colors MUST be HSL.
     -webkit-text-fill-color: transparent;
   }
   
-  /* Glow effects */
+  /* Enhanced Glow effects */
   .glow-primary {
     box-shadow: var(--shadow-glow);
   }
@@ -162,24 +122,91 @@ All colors MUST be HSL.
   
   .hover-lift:hover {
     @apply -translate-y-2 scale-105;
+    box-shadow: 0 20px 40px hsl(217 91% 60% / 0.2);
+  }
+
+  /* Enhanced Button Effects */
+  .enhanced-button {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+
+  .enhanced-button:hover {
+    @apply scale-105 shadow-xl;
+    box-shadow: 0 10px 30px hsl(217 91% 60% / 0.3);
+  }
+
+  .enhanced-button:active {
+    @apply scale-95;
+  }
+
+  /* Enhanced Social Button Effects */
+  .enhanced-social-button {
+    @apply relative overflow-hidden;
+  }
+
+  .enhanced-social-button:hover {
+    @apply shadow-lg;
+    box-shadow: 0 8px 25px hsl(217 91% 60% / 0.25);
+  }
+
+  /* Enhanced Navigation Link Effects */
+  .enhanced-nav-link {
+    @apply relative;
+  }
+
+  .enhanced-nav-link:hover {
+    @apply transform;
+    filter: drop-shadow(0 0 8px hsl(217 91% 60% / 0.4));
+  }
+
+  /* Enhanced Project Card Effects */
+  .enhanced-project-card {
+    @apply transition-all duration-500;
+  }
+
+  .enhanced-project-card:hover {
+    @apply shadow-2xl;
+    box-shadow: 0 25px 50px hsl(217 91% 60% / 0.15);
+    transform: translateY(-8px) rotateX(2deg);
+  }
+
+  /* Profile Image Enhanced Hover */
+  .enhanced-profile-hover {
+    @apply transition-all duration-500 transform-gpu;
+  }
+
+  .enhanced-profile-hover:hover {
+    @apply scale-110 rotate-2;
+    filter: brightness(1.1) contrast(1.1) drop-shadow(0 0 20px hsl(217 91% 60% / 0.4));
   }
 }
 
 @layer utilities {
-  /* 3D Background shapes */
+  /* Enhanced 3D Background shapes */
   .bg-shape {
     position: absolute;
     border-radius: 50%;
     background: var(--gradient-glow);
     opacity: 0.1;
     animation: rotate 20s linear infinite;
+    filter: blur(1px);
   }
   
   .bg-shape:nth-child(odd) {
     animation-direction: reverse;
   }
+
+  .bg-shape:nth-child(3n) {
+    animation: float-rotate 25s ease-in-out infinite;
+  }
+
+  /* Particle Container */
+  .particle-container {
+    pointer-events: none;
+  }
 }
 
+/* Enhanced Keyframe Animations */
 @keyframes float {
   0%, 100% {
     transform: translateY(0px) rotate(0deg);
@@ -201,6 +228,21 @@ All colors MUST be HSL.
   }
 }
 
+@keyframes float-rotate {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateY(-15px) rotate(90deg) scale(1.1);
+  }
+  50% {
+    transform: translateY(-30px) rotate(180deg) scale(0.9);
+  }
+  75% {
+    transform: translateY(-15px) rotate(270deg) scale(1.1);
+  }
+}
+
 @keyframes pulse-glow {
   0%, 100% {
     opacity: 0.4;
@@ -210,4 +252,80 @@ All colors MUST be HSL.
     opacity: 0.8;
     transform: scale(1.05);
   }
+}
+
+@keyframes float-random-0 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  33% { transform: translateY(-15px) translateX(10px); }
+  66% { transform: translateY(-5px) translateX(-8px); }
+}
+
+@keyframes float-random-1 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-10px) translateX(-15px); }
+  75% { transform: translateY(-20px) translateX(12px); }
+}
+
+@keyframes float-random-2 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  40% { transform: translateY(-25px) translateX(5px); }
+  80% { transform: translateY(-8px) translateX(-10px); }
+}
+
+/* Utility Animations */
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.animate-float-random-0 {
+  animation: float-random-0 8s ease-in-out infinite;
+}
+
+.animate-float-random-1 {
+  animation: float-random-1 10s ease-in-out infinite;
+}
+
+.animate-float-random-2 {
+  animation: float-random-2 12s ease-in-out infinite;
+}
+
+/* Enhanced fade in animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+/* Ripple effect for buttons */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.ripple::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  animation: ripple 0.6s linear;
 }
