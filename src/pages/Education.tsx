@@ -1,6 +1,9 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Award, BookOpen, GraduationCap } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Calendar, Award, BookOpen, GraduationCap, ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
+import Navigation from "@/components/Portfolio/Navigation";
 
 const Education = () => {
   // Placeholder data - user can replace with actual education details
@@ -43,7 +46,9 @@ const Education = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20 relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden">
+      <Navigation />
+      <div className="pt-20">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="bg-shape w-96 h-96 top-20 -left-48 opacity-5" />
@@ -51,6 +56,16 @@ const Education = () => {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 py-12 relative z-10">
+        {/* Back Button */}
+        <div className="mb-8">
+          <Link to="/">
+            <Button variant="outline" className="group">
+              <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+              Back to Portfolio
+            </Button>
+          </Link>
+        </div>
+
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -177,6 +192,7 @@ const Education = () => {
             <p>• Update the grades, dates, and descriptions with your information</p>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

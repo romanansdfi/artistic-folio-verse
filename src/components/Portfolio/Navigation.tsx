@@ -37,11 +37,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-20 relative">
           {/* Logo */}
           <div className="flex items-center">
-            <img 
-              src="/lovable-uploads/49821882-e23a-4a71-a87b-635b627ccce9.png" 
-              alt="Rambilas Dev Logo" 
-              className="h-10 w-auto hover:scale-105 transition-transform duration-300"
-            />
+            <span className="font-bold text-xl gradient-text">Portfolio</span>
           </div>
 
           {/* Centered Desktop Navigation with enhanced hover effects */}
