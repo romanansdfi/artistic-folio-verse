@@ -12,7 +12,6 @@ const Navigation = () => {
     { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
-    { name: "Education", href: "/education" },
     { name: "Contact", href: "#contact" }
   ];
 
@@ -34,44 +33,24 @@ const Navigation = () => {
       isScrolled ? 'glass-card backdrop-blur-lg' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex justify-between items-center h-20 relative">
-          {/* Logo */}
-          <div className="flex items-center">
-            <span className="font-bold text-xl gradient-text">Portfolio</span>
-          </div>
-
+        <div className="flex justify-center items-center h-20 relative">
           {/* Centered Desktop Navigation with enhanced hover effects */}
-          <div className="hidden md:flex items-center space-x-2 absolute left-1/2 transform -translate-x-1/2">
+          <div className="hidden md:flex items-center space-x-2">
             {navItems.map((item, index) => (
-              item.href.startsWith('/') ? (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="relative px-4 py-2 text-foreground font-medium group transition-all duration-300 enhanced-nav-link"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <span className="relative z-10 group-hover:text-primary transition-colors duration-300">
-                    {item.name}
-                  </span>
-                  <div className="absolute inset-0 rounded-lg bg-gradient-primary opacity-0 group-hover:opacity-10 transition-all duration-300 transform scale-0 group-hover:scale-100" />
-                  <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-primary group-hover:w-full group-hover:left-0 transition-all duration-300" />
-                </a>
-              ) : (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="relative px-4 py-2 text-foreground font-medium group transition-all duration-300 enhanced-nav-link"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <span className="relative z-10 group-hover:text-primary transition-colors duration-300">
-                    {item.name}
-                  </span>
-                  {/* Animated background */}
-                  <div className="absolute inset-0 rounded-lg bg-gradient-primary opacity-0 group-hover:opacity-10 transition-all duration-300 transform scale-0 group-hover:scale-100" />
-                  {/* Animated underline */}
-                  <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-primary group-hover:w-full group-hover:left-0 transition-all duration-300" />
-                </a>
-              )
+              <a
+                key={item.name}
+                href={item.href}
+                className="relative px-4 py-2 text-foreground font-medium group transition-all duration-300 enhanced-nav-link"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <span className="relative z-10 group-hover:text-primary transition-colors duration-300">
+                  {item.name}
+                </span>
+                {/* Animated background */}
+                <div className="absolute inset-0 rounded-lg bg-gradient-primary opacity-0 group-hover:opacity-10 transition-all duration-300 transform scale-0 group-hover:scale-100" />
+                {/* Animated underline */}
+                <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-primary group-hover:w-full group-hover:left-0 transition-all duration-300" />
+              </a>
             ))}
             <Button 
               size="sm" 

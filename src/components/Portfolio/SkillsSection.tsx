@@ -102,9 +102,9 @@ const SkillsSection = () => {
           </h3>
           <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
             {[
-              "JavaScript", "HTML5", "CSS3", "Bootstrap", "React.js", 
-              "Node.js", "MongoDB", "Express.js", "Java Language", "Data Structures & Algorithms",
-              "Advanced DSA", "SQL", "Python"
+              "JavaScript", "HTML5", "CSS3", "Bootstrap", "Material-UI", 
+              "Ant Design", "Firebase", "Stripe", "WebSockets", "Three.js",
+              "D3.js", "Chart.js", "Framer Motion", "Electron", "Puppeteer"
             ].map((tech, index) => (
               <div
                 key={index}
