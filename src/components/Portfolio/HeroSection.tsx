@@ -92,6 +92,15 @@ const HeroSection = () => {
             >
               Get In Touch
             </Button>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="glass-card hover-lift enhanced-button group"
+              onClick={() => window.open('https://your-resume-link.com', '_blank')}
+            >
+              <span className="relative z-10">Download Resume</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md" />
+            </Button>
           </div>
 
           {/* Social Links */}

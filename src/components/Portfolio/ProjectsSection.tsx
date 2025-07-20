@@ -17,7 +17,7 @@ const ProjectsSection = () => {
       technologies: ["React", "Node.js", "Express", "MongoDB", "Web Audio API", "Tailwind CSS"],
       image: spotifyImage,
       github: "https://github.com/Ram-sah19/spotify-clone",
-      demo: "https://spotify-clone-ram.vercel.app",
+      demo: "#",
       featured: true
     },
     {
@@ -26,7 +26,7 @@ const ProjectsSection = () => {
       technologies: ["Python", "TensorFlow", "React", "FastAPI", "PostgreSQL", "Machine Learning"],
       image: bloodDonationImage,
       github: "https://github.com/Ram-sah19/blood-donation-ai",
-      demo: "https://blood-donation-ai.vercel.app",
+      demo: "#",
       featured: true
     },
     {
@@ -35,7 +35,7 @@ const ProjectsSection = () => {
       technologies: ["Python", "YOLOv5", "OpenCV", "TensorFlow", "Flask", "WebSocket"],
       image: aiDetectionImage,
       github: "https://github.com/Ram-sah19/ai-object-detection",
-      demo: "https://ai-detection-ram.vercel.app",
+      demo: "#",
       featured: true
     },
     {
@@ -44,7 +44,7 @@ const ProjectsSection = () => {
       technologies: ["React", "Node.js", "MongoDB", "Express", "Socket.io", "Chart.js"],
       image: schoolManagementImage,
       github: "https://github.com/Ram-sah19/pioneer-school-management",
-      demo: "https://pioneer-school.vercel.app",
+      demo: "#",
       featured: false
     },
     {
@@ -53,7 +53,7 @@ const ProjectsSection = () => {
       technologies: ["React Native", "Python", "Google Maps API", "TensorFlow", "Firebase"],
       image: touristAiImage,
       github: "https://github.com/Ram-sah19/tourist-ai-tamil-nadu",
-      demo: "https://tourist-ai-tn.vercel.app",
+      demo: "#",
       featured: false
     }
   ];
